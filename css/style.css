@@ -158,6 +158,7 @@ button:focus {
   background-image: linear-gradient(127deg,
       #205375 50%,
       #112B3C 50%);
+  background-size: 15px;
 }
 
 .back {
