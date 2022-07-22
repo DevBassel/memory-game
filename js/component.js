@@ -1,3 +1,5 @@
+let imgs = 6;
+
 function card(src) {
   let card = document.createElement('div');
   card.classList.add('card');
@@ -63,13 +65,13 @@ function timer() {
 
 function winner(score) {
   let end = document.querySelector('.end');
-  if (score == 10) {
+  if (score == imgs * 2) {
     console.log('winner');
     end.classList.add('active');
     end.querySelector('p').textContent = 'Winner :)';
     return true;
   }
-  if (score < 10 && settime == 0) {
+  if (score < imgs * 2 && settime == 0) {
     end.classList.add('active');
     end.querySelector('p').textContent = 'Loser :(';
     console.log('loser');
@@ -80,4 +82,5 @@ function winner(score) {
 export {
   card,
   first_show,
+  imgs
 }
