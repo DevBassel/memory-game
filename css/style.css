@@ -172,7 +172,6 @@ button:focus {
 .box.done {
   border: 3px solid lime;
   transform: rotateY(180deg) translateX(-100%);
-
 }
 
 
