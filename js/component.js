@@ -1,4 +1,5 @@
 let imgs = 6;
+let lives = 3;
 
 function card(src) {
   let card = document.createElement('div');
@@ -33,15 +34,20 @@ function compare() {
         score++;
       });
     } else {
+      lives--;
+      document.querySelector('.lives span').textContent = lives;
       select.forEach(el => {
         el.classList.remove('select');
-        setTimeout(() => el.querySelector('.box').classList.remove('active'), 1000);
+        setTimeout(() => {
+          el.querySelector('.box').classList.remove('active')
+        }, 1000);
       });
     }
   }
 }
 
 function first_show() {
+  document.querySelector('.lives span').textContent = lives;
   timer();
   document.querySelectorAll('.card .box').forEach(el => {
     el.classList.add('active');
@@ -71,7 +77,7 @@ function winner(score) {
     end.querySelector('p').textContent = 'Winner :)';
     return true;
   }
-  if (score < imgs * 2 && settime == 0) {
+  if ((score < imgs * 2 && settime == 0) || lives == 0) {
     end.classList.add('active');
     end.querySelector('p').textContent = 'Loser :(';
     console.log('loser');
